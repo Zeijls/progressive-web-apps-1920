@@ -2,8 +2,8 @@
 
 ## Progressive Web Apps @cmda-minor-web 1819
 
-![Overzichtspagina](img/overview.png)
-![Detailpagina](img/detail.png)
+<img width="1440" alt="overview" src="https://user-images.githubusercontent.com/45422060/76772179-beb23600-67a0-11ea-82f3-e15202dabe0f.png">)
+<img width="1440" alt="detail" src="https://user-images.githubusercontent.com/45422060/76772236-d7bae700-67a0-11ea-9b8c-8f1381bbf08b.png">
 
 ## Inhoudspagina
 
