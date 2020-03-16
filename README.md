@@ -1,0 +1,115 @@
+# Server Site Rendering
+
+## Progressive Web Apps @cmda-minor-web 1819
+
+![Overzichtspagina](img/overview.png)
+![Detailpagina](img/detail.png)
+
+## Inhoudspagina
+
+- [Live Demo](#Live-Demo)
+- [De opdracht](#De-opdracht)
+- [Concept](#Concept)
+- [Installatie](#Installatie)
+- [API](#API)
+- [Wishlist](#Wishlist)
+- [Bronnenlijst](#Bronnenlijst)
+- [Credits](#Credits)
+
+## Live Demo
+
+[Live Demo](https://zeijls.github.io/performance-matters-1819/.)
+
+## Opdracht
+
+- Data moet vanuit een API worden gerenderd in de HTML
+- De data uit de API wordt asynchroon opgehaald
+- Voor het oog is er een overzichts en detailpagina met gebruik van een router (single page web app)
+- De code is opgedeeld in modules
+- De code visueel maken dmv een Actor Diagram en Interactive Diagram
+- De applicatie bevat states
+- De code is dynamisch
+
+## Concept
+
+Op de webapplicatie zijn alle schilderijen van Rembrandt van Rijn in het Rijksmuseum weergegeven. Zodra een schilderij wordt geselecteerd worden de details weergegeven. Als het ophalen van de schilderijen lang duurt is er een loadingstate.
+
+## Installatie
+
+### Nodejs
+
+Ik had nodejs al geinstalleerd op mijn computer. Om te controleren of NPM al is geintalleerd kun je het volgende commando toepassen in je terminal;
+
+> node -v
+
+Als je nodejs nog niet hebt kun je dit installeren via de volgende link;
+[Nodejs installeren](https://nodejs.org/en/download/)
+
+### NPM
+
+Om te controleren of je NPM al hebt geinstalleerd kun je het volgende commando uitvoeren in je terminal;
+
+> npm -v
+
+Als je NPM nog moet installeren kun je het volgende commando uitvoeren in je terminal;
+
+> npm install npm@latest -g
+
+### Express
+
+Om express te installeren heb je een aantal verschillende stappen nodig. Hierbij gaan we ervan uit dat je nodejs succesvol hebt geinstalleerd.
+
+> mkdir myapp
+> cd myapp
+
+Gebruik npm init om een bestand package.json file aan te maken voor je applicatie.
+
+> npm init
+
+Om de standaard instellingen te accepteren zoals de versie en de naam van je applicatie kun je op enter klikken. In de entry point vul je de naam van je javascript bestand in.
+
+> entry point: (index.js)
+
+Installeer express in de dependecies list
+
+> npm install express --save
+
+### Nodemon
+
+Nodemon kan de wijzigingen die je toepast in de applicatie meteen doorvoegen naar je localhost. Hierdoor hoef je niet iedere keer NPM af te sluiten en opnieuw op te starten. Nodemon installeer je op de volgende manier in je dependencies;
+
+> npm install --save-dev nodemon
+
+### ejs
+
+Door middel van ejs kun je html renderen in je bestanden. Om ejc te installeren gebruik je het volgende commando;
+
+> npm install ejs
+
+## API
+
+In deze applicatie gebruik ik de API van het Rijksmuseum. In deze API is een groot deel van de collectie van het Rijksmuseum verzameld. Alle details van de schilerderijen worden hierin weergegeven. Vanwege copyright restricties zijn kunstwerken van de 20e en 21e eeuw niet toegevoegd in deze API.
+
+Om gebruik te maken van de API van het Rijksmuseum heb je een key nodig. Deze kun je aanvragen bij de gevanceerde account instellingen op de site van het Rijksumseum. https://www.rijksmuseum.nl/en/rijksstudio/
+
+Ik heb alleen de schilderijen van Rembrandt van Rijn gebruikt door de volgende endpoints te gebruiken.
+
+> const rijksAPI = baseURl + key + involvedMaker + maker;
+
+Er bleven 9 schilderijen over. Vanaf dit punt heb ik deze schilderijen verder uitgezocht door middel van Map, Filter en Reduce.
+
+## To Do
+
+## Wishlist
+
+## Bronnen
+
+- [Introduction to NPM Scripts](https://www.freecodecamp.org/news/introduction-to-npm-scripts-1dbb2ae01633/)
+- [Get NPM](https://www.npmjs.com/get-npm)
+- [Express Documentation](https://expressjs.com/en/api.html)
+- [Nodemon](https://www.npmjs.com/package/nodemon)
+- [ejs](https://ejs.co/#install)
+
+## Credits
+
+- Robin Stut, hij heet mij geholpen met de Find() functie

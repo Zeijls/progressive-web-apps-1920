@@ -1,0 +1,27 @@
+<html>
+<%- include('partials/head') %>
+
+<body>
+  <%- include('partials/header') %>
+
+  <main>
+
+    <div class="wrapper">
+      <ul id="rijksContainer">
+        <% data.artObjects.map(function(item) { %>
+
+        <li>
+          <% console.log(item.webImage) %>
+          <a href="/paintings/<%= item.objectNumber %>">
+            <img src="<%= item.webImage.url %>">
+          </a>
+        </li>
+        <%  }); %>
+      </ul>
+    </div>
+
+  </main>
+
+</body>
+
+</html>

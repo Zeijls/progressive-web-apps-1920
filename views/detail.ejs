@@ -1,0 +1,21 @@
+<html>
+<%- include('partials/head') %>
+
+<body>
+    <%- include('partials/header') %>
+    <% console.log('paintingData') %>
+    <main id="content">
+        <section data-route="painting" id="painting">
+            <img src="<%= paintingData.webImage.url%>" alt="" />
+            <div>
+                <section><%=paintingData.title%></section>
+                <section><%=paintingData.productionPlaces%></section>
+                <section><%=paintingData.principalOrFirstMaker%></section>
+                <a href="/"> Terug naar overzicht</a>
+            </div>
+        </section>
+        </div>
+    </main>
+</body>
+
+</html>
