@@ -13,7 +13,7 @@
 - [Concept](#Concept)
 - [Installatie](#Installatie)
 - [API](#API)
-- [Wishlist](#Wishlist)
+- [Artikelen](#Artikelen)
 - [Bronnenlijst](#Bronnenlijst)
 - [Credits](#Credits)
 
@@ -123,7 +123,10 @@ Er bleven 9 schilderijen over. Vanaf dit punt heb ik deze schilderijen verder ui
   - [ ] The offline cookbook - Jake Archibald
   - [ ] Service Worker Cookbook - Mozilla
 
-## Wishlist
+## Artikelen
+
+De artikelen die ik heb gelezen voor dit vak houd ik bij in mijn Github pages <br>
+[Gitbook Artikelen](https://minor-web-dev.gitbook.io/progressive-web-apps/)
 
 ## Bronnen
 
