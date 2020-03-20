@@ -20,7 +20,7 @@
 ## Feedback
 
 - Mijn manifest bestand staat nu in de static map, hier wil ik mijn service worker ook aan toevoegen. Is dit een handige plek? Of kan dit ergens anders beter?
-- Zodra de gebruiker ofline geeft wil ik hier een melding van geven zoals veel applicaties ook doen (een balkje bovenin) is dit voldoende, of moet dit uitgebreider? <br>
+- Zodra de gebruiker offline geeft wil ik hier een melding van geven zoals veel applicaties ook doen (een balkje bovenin) is dit voldoende, of moet dit uitgebreider? <br>
   ![Voorbeeld Offline](/docs/img/vbOffline.png)
 
 ## Live Demo
@@ -30,13 +30,7 @@ Live demo werkt nog niet, moet dat nog deployen met Heroku.
 
 ## Opdracht
 
-- Data moet vanuit een API worden gerenderd in de HTML
-- De data uit de API wordt asynchroon opgehaald
-- Voor het oog is er een overzichts en detailpagina met gebruik van een router (single page web app)
-- De code is opgedeeld in modules
-- De code visueel maken dmv een Actor Diagram en Interactive Diagram
-- De applicatie bevat states
-- De code is dynamisch
+De web aplicatie moet server side worden gerenderd. Zodra de gebruiker offline is, moet de content zichbaar blijven. De concent die de gebruiker al een keer eerder heeft bezocht kan offline beschikbaar zijn doordat het wordt opgeslagen in de cache. Aan het einde van dit project is het de bedoeling dat het concept een progressive web app is.
 
 ## Concept
 
