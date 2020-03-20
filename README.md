@@ -20,7 +20,7 @@
 ## Feedback
 
 - Mijn manifest bestand staat nu in de static map, hier wil ik mijn service worker ook aan toevoegen. Is dit een handige plek? Of kan dit ergens anders beter?
-- Zodra de gebruiker ofline geeft wil ik hier een melding van geven zoals veel applicaties ook doen (een balkje bovenin) is dit voldoende, of moet dit uitgebreider?
+- Zodra de gebruiker ofline geeft wil ik hier een melding van geven zoals veel applicaties ook doen (een balkje bovenin) is dit voldoende, of moet dit uitgebreider? <br>
   ![Voorbeeld Offline](/docs/img/vbOffline.png)
 
 ## Live Demo
