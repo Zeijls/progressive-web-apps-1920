@@ -7,6 +7,7 @@
 
 ## Inhoudspagina
 
+- [Feedback](#Feedback)
 - [Live Demo](#Live-Demo)
 - [De opdracht](#De-opdracht)
 - [Concept](#Concept)
@@ -16,9 +17,16 @@
 - [Bronnenlijst](#Bronnenlijst)
 - [Credits](#Credits)
 
+## Feedback
+
+- Mijn manifest bestand staat nu in de static map, hier wil ik mijn service worker ook aan toevoegen. Is dit een handige plek? Of kan dit ergens anders beter?
+- Zodra de gebruiker ofline geeft wil ik hier een melding van geven zoals veel applicaties ook doen (een balkje bovenin) is dit voldoende, of moet dit uitgebreider?
+  ![Voorbeeld Offline](/docs/img/vbOffline.png)
+
 ## Live Demo
 
 [Live Demo](https://zeijls.github.io/performance-matters-1819/.)
+Live demo werkt nog niet, moet dat nog deployen met Heroku.
 
 ## Opdracht
 
@@ -99,6 +107,27 @@ Ik heb alleen de schilderijen van Rembrandt van Rijn gebruikt door de volgende e
 Er bleven 9 schilderijen over. Vanaf dit punt heb ik deze schilderijen verder uitgezocht door middel van Map, Filter en Reduce.
 
 ## To Do
+
+- [ ] Probleem met heroku oplossen
+- [ ] Key niet zichtbaar zetten
+- [x] Readme Bijwerken
+
+- [x] Exercise 2: Convert your app into a Progressive Web App
+- [ ] Make an installable version of your app, making it feel more app-like.
+- [ ] Laatste 2 stappen uitwerken (manifest bestand)
+- [ ] Artikelen lezen
+
+  - [ ] Progressive Web Apps: The future of the Mobile Web by Google, Microsoft & Awwwards
+  - [x] Progressive Web Apps - web.dev
+  - [ ] Developing Progressive Web Apps Course - Google
+
+- [ ] Exercise 3: Implement a Service Worker
+- [ ] Consider how you want to implement the Service Worker in your OBA app. Create a job story for this. Make sure that you at least cache and serve a number of static assets with the Worker. Also provide feedback to the user about the online / offline state.
+- [ ] Include your job story in the README.md
+- [ ] Artikelen lezen
+  - [ ] Service Workers: an Introduction - Google Developers
+  - [ ] The offline cookbook - Jake Archibald
+  - [ ] Service Worker Cookbook - Mozilla
 
 ## Wishlist
 

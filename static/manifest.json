@@ -1,0 +1,21 @@
+{
+  "short_name": "Rijksmuseum",
+  "name": "Rijksmuseum by painter",
+  "description": "Art of the Rijksmuseum by painter",
+  "start_url": "/",
+  "background_color": "#000000",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#A7292B",
+  "icons": [{
+      "src": "/img/artSmall.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/img/artBig.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
