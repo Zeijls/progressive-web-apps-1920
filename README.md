@@ -135,6 +135,7 @@ De artikelen die ik heb gelezen voor dit vak houd ik bij in mijn Github pages <b
 - [Express Documentation](https://expressjs.com/en/api.html)
 - [Nodemon](https://www.npmjs.com/package/nodemon)
 - [ejs](https://ejs.co/#install)
+- [PWA Web.dev](https://web.dev/codelab-make-installable/)
 
 ## Credits
 
