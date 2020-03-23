@@ -14,7 +14,7 @@
 // });
 
 var CACHE_NAME = "my-site-cache-v1";
-var urlsToCache = ["/", "/styles/main.css", "/script/main.js"];
+var urlsToCache = ["/", "/css/style.css", "/js/index.js"];
 
 // Install service worker
 self.addEventListener("install", function(event) {

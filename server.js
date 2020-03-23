@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = normalizePort(process.env.PORT || "3000");
 const paintingData = require("./modules/api");
 
 app.use(express.static("static"));
@@ -26,5 +26,25 @@ app.get("/paintings/:id", (req, res) => {
     res.render("detail", { paintingData: newId });
   });
 });
-
+app.set("port", port);
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
+/**
+ * Normalize a port into a number, string, or false.
+ */
+
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}

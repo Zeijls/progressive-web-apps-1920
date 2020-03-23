@@ -1,13 +1,12 @@
 <script>
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', function () {
-            navigator.serviceWorker.register('service-worker.js')
-                .then(reg => {
-                    console.log('Service worker registered! 😎', reg);
+            navigator.serviceWorker
+                .register('/service-worker.js') // Hier gaat het fout?
+                .then(function (registration) {
+                    return registration.update();
                 })
-                .catch(err => {
-                    console.log('😥 Service worker registration failed: ', err);
-                });
+                .catch(err => console.log(`Service Worker: Error ${err}`))
         });
     }
 </script>

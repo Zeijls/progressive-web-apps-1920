@@ -1,6 +1,6 @@
 {
-  "short_name": "Rijksmuseum",
-  "name": "Rijksmuseum by painter",
+  "name": "Rijksmuseum",
+  "short_name": "RM",
   "description": "Art of the Rijksmuseum by painter",
   "start_url": "/",
   "background_color": "#000000",
