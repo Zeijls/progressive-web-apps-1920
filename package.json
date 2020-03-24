@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/Zeijls/progressive-web-apps-1920/blob/master/README.md",
   "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-css": "^0.1.0",
+    "gulp-uglify": "^3.0.2",
     "nodemon": "^2.0.2"
   }
 }

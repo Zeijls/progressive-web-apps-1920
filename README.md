@@ -88,6 +88,22 @@ Door middel van ejs kun je html renderen in je bestanden. Om ejc te installeren 
 
 > npm install ejs
 
+### Gulp
+
+> NPM install --save-dev gulp
+
+Gulp uglify
+
+> NPM install --save-dev gulp-uglify
+
+Gulp concat
+
+> NPM install --save-dev gulp-concat
+
+Gulp CSS
+
+> NPM install --save-dev gulp-css
+
 ## API
 
 In deze applicatie gebruik ik de API van het Rijksmuseum. In deze API is een groot deel van de collectie van het Rijksmuseum verzameld. Alle details van de schilerderijen worden hierin weergegeven. Vanwege copyright restricties zijn kunstwerken van de 20e en 21e eeuw niet toegevoegd in deze API.

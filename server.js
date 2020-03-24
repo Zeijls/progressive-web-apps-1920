@@ -3,12 +3,19 @@ const app = express();
 const port = normalizePort(process.env.PORT || "3000");
 const paintingData = require("./modules/api");
 
+// const overviewRouter = require("/routes/overview");
+// const detailRouter = require("/routes/detail");
+// const offlineRouter = require("/routes/offline");
+
 app.use(express.static("static"));
 
 app.set("view engine", "ejs");
 app.set("views", "views");
 
-console.log("test");
+// Routes;
+// app.use(overviewRouter);
+// app.use(detailRouter);
+// app.use(offlineRouter);
 
 app.get("/", (req, res) => {
   paintingData.getPaintings().then(function(paintingData) {

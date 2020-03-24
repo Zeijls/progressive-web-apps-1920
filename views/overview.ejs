@@ -1,45 +1,25 @@
 <html>
-<%- include('partials/head') %>
+  <%- include('partials/head') %>
 
-<body>
-  <%- include('partials/header') %>
+  <body>
+    <%- include('partials/header') %>
 
-  <main>
+    <main>
+      <div class="wrapper">
+        <ul id="rijksContainer">
+          <% data.artObjects.map(function(item) { %>
 
-    <div class="wrapper">
-      <ul id="rijksContainer">
-        <% data.artObjects.map(function(item) { %>
+          <li>
+            <% console.log(item.webImage) %>
+            <a href="/paintings/<%= item.objectNumber %>">
+              <img src="<%= item.webImage.url %>" />
+            </a>
+          </li>
+          <% }); %>
+        </ul>
+      </div>
+    </main>
 
-        <li>
-          <% console.log(item.webImage) %>
-          <a href="/paintings/<%= item.objectNumber %>">
-            <img src="<%= item.webImage.url %>">
-          </a>
-        </li>
-        <%  }); %>
-      </ul>
-    </div>
-
-  </main>
-  <!-- Bron: https://glitch.com/edit/#!/sheer-daily-appendix?path=index.html:36:44 -->
-  <!-- Installation -->
-  <p id="requireHTTPS" class="hidden">
-    <b>STOP!</b> This page <b>must</b> be served over HTTPS.
-    Please <a>reload this page via HTTPS</a>.
-  </p>
-
-  <p>
-    Make me installable, follow the
-    <a href="https://web.dev/installable/discover-installable/codelab-make-installable">instructions</a> here.
-  </p>
-
-  <!-- Install button, hidden by default -->
-  <div id="installContainer" class="hidden">
-    <button id="butInstall" type="button">
-      Install
-    </button>
-  </div>
-  <%- include('partials/footer') %>
-</body>
-
+    <%- include('partials/footer') %>
+  </body>
 </html>
