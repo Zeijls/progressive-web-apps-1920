@@ -1,4 +1,6 @@
-var CACHE_NAME = "my-site-cache-v1";
+// BRON; https://developers.google.com/web/fundamentals/primers/service-workers
+
+var CACHE_NAME = "v1";
 var urlsToCache = ["/", "/css/main.css", "/js/index.js"];
 
 // Install service worker

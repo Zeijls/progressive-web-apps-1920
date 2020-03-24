@@ -104,6 +104,10 @@ Gulp CSS
 
 > NPM install --save-dev gulp-css
 
+### Chokidar
+
+>
+
 ## API
 
 In deze applicatie gebruik ik de API van het Rijksmuseum. In deze API is een groot deel van de collectie van het Rijksmuseum verzameld. Alle details van de schilerderijen worden hierin weergegeven. Vanwege copyright restricties zijn kunstwerken van de 20e en 21e eeuw niet toegevoegd in deze API.
@@ -118,26 +122,18 @@ Er bleven 9 schilderijen over. Vanaf dit punt heb ik deze schilderijen verder ui
 
 ## To Do
 
-- [ ] Probleem met heroku oplossen
-- [ ] Key niet zichtbaar zetten
-- [x] Readme Bijwerken
+- [x] Heroku
+- [x] .env file aanmaken
+- [x] Manifest file (installable app)
+- [x] Service worker
 
-- [x] Exercise 2: Convert your app into a Progressive Web App
-- [ ] Make an installable version of your app, making it feel more app-like.
-- [ ] Laatste 2 stappen uitwerken (manifest bestand)
-- [ ] Artikelen lezen
+  - [ ] Offline versie service worker
 
-  - [ ] Progressive Web Apps: The future of the Mobile Web by Google, Microsoft & Awwwards
-  - [x] Progressive Web Apps - web.dev
-  - [ ] Developing Progressive Web Apps Course - Google
+- [x] Gulp concat
+- [ ] Manifest
+- [ ] Afbeeldingen verkleinen
 
-- [ ] Exercise 3: Implement a Service Worker
-- [ ] Consider how you want to implement the Service Worker in your OBA app. Create a job story for this. Make sure that you at least cache and serve a number of static assets with the Worker. Also provide feedback to the user about the online / offline state.
-- [ ] Include your job story in the README.md
-- [ ] Artikelen lezen
-  - [ ] Service Workers: an Introduction - Google Developers
-  - [ ] The offline cookbook - Jake Archibald
-  - [ ] Service Worker Cookbook - Mozilla
+- [ ] Rubric doorlezen
 
 ## Artikelen
 
@@ -151,7 +147,12 @@ De artikelen die ik heb gelezen voor dit vak houd ik bij in mijn Github pages <b
 - [Express Documentation](https://expressjs.com/en/api.html)
 - [Nodemon](https://www.npmjs.com/package/nodemon)
 - [ejs](https://ejs.co/#install)
+- [Gulp](https://www.npmjs.com/package/gulp)
+- [Gulp Concat](https://www.npmjs.com/package/gulp-concat)
+- [Minify](https://www.npmjs.com/package/minify)
+- [Chokidar](https://www.npmjs.com/package/chokidar)
 - [PWA Web.dev](https://web.dev/codelab-make-installable/)
+- [Service worker](https://developers.google.com/web/fundamentals/primers/service-workers)
 
 ## Credits
 

@@ -1,5 +1,3 @@
-require("dotenv").config();
-
 async function getPaintings() {
   const baseURl = "https://www.rijksmuseum.nl/api/nl/collection?key=";
   const key = process.env.key;
