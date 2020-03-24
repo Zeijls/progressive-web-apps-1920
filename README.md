@@ -106,7 +106,10 @@ Gulp CSS
 
 ### Chokidar
 
->
+> NPM install --save-dev chokidar-cli
+
+> "watch:css": "chokidar './static/css/\*.css' -c 'npm run build:css'"
+> (in package.json)
 
 ## API
 
@@ -130,7 +133,7 @@ Er bleven 9 schilderijen over. Vanaf dit punt heb ik deze schilderijen verder ui
   - [ ] Offline versie service worker
 
 - [x] Gulp concat
-- [ ] Manifest
+- [ ] Minify
 - [ ] Afbeeldingen verkleinen
 
 - [ ] Rubric doorlezen
