@@ -156,7 +156,10 @@ De artikelen die ik heb gelezen voor dit vak houd ik bij in mijn Github pages <b
 - [Chokidar](https://www.npmjs.com/package/chokidar)
 - [PWA Web.dev](https://web.dev/codelab-make-installable/)
 - [Service worker](https://developers.google.com/web/fundamentals/primers/service-workers)
+- [Lazy Loader](https://imagekit.io/blog/lazy-loading-images-complete-guide/)
 
 ## Credits
 
 - Robin Stut, hij heet mij geholpen met de Find() functie
+- Ramon Meijer, hij heeft mij geholpen met het opstarten van Heroku
+- Peppe Quint, hij heeft mij geholpen met het builden van mijn gulp
