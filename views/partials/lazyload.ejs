@@ -1,40 +1,44 @@
 <!-- BRON https://imagekit.io/blog/lazy-loading-images-complete-guide/ -->
 
 <script>
-    const allImages = document.querySelectorAll('img')
-    allImages.forEach(img => {
-        img.setAttribute('data-src', img.src)
-        img.removeAttribute('src')
-    })
+  // Voegt de class "dat-src" toe aan de img en verwijderd de "src"
+  const allImages = document.querySelectorAll("img");
+  allImages.forEach(img => {
+    img.setAttribute("data-src", img.src);
+    img.removeAttribute("src");
+  });
 
-    document.addEventListener("DOMContentLoaded", function () {
-        var lazyloadImages = document.querySelectorAll("img.lazy");
-        var lazyloadThrottleTimeout;
+  document.addEventListener("DOMContentLoaded", function() {
+    var lazyloadImages = document.querySelectorAll("img.lazy");
+    var lazyloadThrottleTimeout;
 
-        function lazyload() {
-            if (lazyloadThrottleTimeout) {
-                clearTimeout(lazyloadThrottleTimeout);
-            }
+    // Verwijder timeout
+    function lazyload() {
+      if (lazyloadThrottleTimeout) {
+        clearTimeout(lazyloadThrottleTimeout);
+      }
 
-            lazyloadThrottleTimeout = setTimeout(function () {
-                var scrollTop = window.pageYOffset;
-                lazyloadImages.forEach(function (img) {
-                    if (img.offsetTop < window.innerHeight + scrollTop) {
-                        img.src = img.dataset.src;
-                        img.classList.remove("lazy");
-                    }
-                });
-                if (lazyloadImages.length == 0) {
-                    document.removeEventListener("scroll", lazyload);
-                    window.removeEventListener("resize", lazyload);
-                    window.removeEventListener("orientationChange", lazyload);
-                }
-            }, 20);
+      // Zet een timeout op de images die nog niet in beeld zijn
+      lazyloadThrottleTimeout = setTimeout(function() {
+        var scrollTop = window.pageYOffset;
+        lazyloadImages.forEach(function(img) {
+          if (img.offsetTop < window.innerHeight + scrollTop) {
+            img.src = img.dataset.src;
+            img.classList.remove("lazy");
+          }
+        });
+        if (lazyloadImages.length == 0) {
+          document.removeEventListener("scroll", lazyload);
+          window.removeEventListener("resize", lazyload);
+          window.removeEventListener("orientationChange", lazyload);
         }
+      }, 20);
+    }
 
-        document.addEventListener("scroll", lazyload);
-        window.addEventListener("load", lazyload);
-        window.addEventListener("resize", lazyload);
-        window.addEventListener("orientationChange", lazyload);
-    });
+    // Eventlisteners wanneer het laden van de images moet starten.
+    document.addEventListener("scroll", lazyload);
+    window.addEventListener("load", lazyload);
+    window.addEventListener("resize", lazyload);
+    window.addEventListener("orientationChange", lazyload);
+  });
 </script>
