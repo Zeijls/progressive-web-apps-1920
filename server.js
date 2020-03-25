@@ -13,7 +13,7 @@ app.set("views", "views");
 
 app.use(express.static(path.join(__dirname, "static")));
 // Routes;
-app.use("/", overviewRouter);
+app.use(overviewRouter);
 app.use(detailRouter);
 // app.use(offlineRouter);
 
