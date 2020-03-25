@@ -4,7 +4,7 @@
   "main": "server.js",
   "scripts": {
     "prestart": "npm run build",
-    "start": "node ./bin/www",
+    "start": "node server.js",
     "predev": "npm run build",
     "dev": "nodemon server.js",
     "prebuild": "rimraf ./static/css/main.css",

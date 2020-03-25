@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 let app = require("../server");
 let http = require("http");
 let debug = require("debug");
