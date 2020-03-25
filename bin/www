@@ -1,7 +1,7 @@
 let app = require("../server");
 let http = require("http");
 let debug = require("debug");
-const port = normalizePort(process.env.PORT || "3000");
+const port = process.env.PORT || "3000";
 
 app.set("port", port);
 
