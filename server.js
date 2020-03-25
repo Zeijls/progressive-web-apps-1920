@@ -9,7 +9,7 @@ const detailRouter = require("./routes/detail");
 // const offlineRouter = require("./routes/offline");
 
 app.set("view engine", "ejs");
-app.set("views", "views");
+app.set("views", path.join(__dirname, "views"));
 
 app.use(express.static(path.join(__dirname, "static")));
 // Routes;
@@ -41,4 +41,4 @@ app.listen(port, () => {
 //   });
 // });
 
-module.exports = app;
+// module.exports = app;
