@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const path = require("path");
-const port = process.env.PORT || 2000;
+const port = process.env.PORT || 3000;
 
 const overviewRouter = require("./routes/overview");
 const detailRouter = require("./routes/detail");
@@ -20,7 +20,9 @@ app.use(detailRouter);
 // app.listen(function(port) {
 //   console.log("server is running" + port);
 // });
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}!`);
+});
 
 // app.get("/", (req, res) => {
 //   paintingData.getPaintings().then(function(paintingData) {
