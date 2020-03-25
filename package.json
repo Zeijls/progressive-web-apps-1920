@@ -1,6 +1,10 @@
 {
   "name": "progressive-web-apps-1920",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=12.13.1",
+    "npm": ">=6.13.7"
+  },
   "main": "server.js",
   "scripts": {
     "prestart": "npm run build",
