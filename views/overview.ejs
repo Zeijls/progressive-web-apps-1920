@@ -1,25 +1,27 @@
 <html>
-  <%- include('partials/head') %>
+<%- include('partials/head') %>
 
-  <body>
-    <%- include('partials/header') %>
-    <main>
-      <div class="wrapper">
-        <ul id="rijksContainer">
-          <% data.artObjects.map(function(item) { %>
+<body>
+  <%- include('partials/header') %>
+  <main>
+    <div class="wrapper">
+      <ul id="rijksContainer">
+        <% data.artObjects.map(function(item) { %>
 
-          <li>
-            <% console.log(item.webImage) %>
-            <a href="/paintings/<%= item.objectNumber %>">
-              <img class="lazy" data-src="<%= item.webImage.url %>" />
-            </a>
-          </li>
-          <% }); %>
-        </ul>
-      </div>
-    </main>
+        <li>
+          <% console.log(item.webImage) %>
+          <a href="/paintings/<%= item.objectNumber %>">
+            <% console.log(item.webImage.url) %>
+            <img class="lazy" src="<%= item.webImage.url %>" />
+          </a>
+        </li>
+        <% }); %>
+      </ul>
+    </div>
+  </main>
 
-    <!-- <%- include ('partials/lazyload') %>  -->
-    <%- include('partials/footer') %> <%- include('partials/lazyload') %>
-  </body>
+  <%- include('partials/footer') %>
+  <%- include('partials/lazyload') %>
+</body>
+
 </html>

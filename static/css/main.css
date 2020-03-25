@@ -55,7 +55,7 @@ body>main>section.active {
     object-fit: cover;
     width: 100%;
     min-height: 500px;
-    background-color: #777;
+    background-color: brown;
 }
 
 section[data-route="painting"] {
@@ -111,7 +111,7 @@ section[data-route="painting"] a {
 /* Lazy loading  */
 
 img.lazy {
-    background-color: #777;
+    background-color: brown;
     width: 400px;
     height: 300px;
     display: block;

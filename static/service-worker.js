@@ -1,63 +1,44 @@
-// BRON; https://developers.google.com/web/fundamentals/primers/service-workers
+// Bron; https://www.youtube.com/watch?v=ksXwaWHCW6k
 
-var CACHE_NAME = "v1";
-var urlsToCache = ["/", "/css/main.css", "/js/index.js"];
+const cacheName = "version-1";
 
-// Install service worker
+// Roept zelf het event aan op de service worker te installeren
 self.addEventListener("install", function(event) {
-  // Perform install steps
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(function(cache) {
-      console.log("Opened cache");
-      return cache.addAll(urlsToCache);
-    })
-  );
+  console.log("Service worker is installed");
 });
 
-// check and clone the response, one for the browser and one for the cache
-self.addEventListener("fetch", function(event) {
-  event.respondWith(
-    caches.match(event.request).then(function(response) {
-      // Cache hit - return response
-      if (response) {
-        return response;
-      }
-
-      return fetch(event.request).then(function(response) {
-        // Check if we received a valid response
-        if (!response || response.status !== 200 || response.type !== "basic") {
-          return response;
-        }
-
-        // IMPORTANT: Clone the response. A response is a stream
-        // and because we want the browser to consume the response
-        // as well as the cache consuming the response, we need
-        // to clone it so we have two streams.
-        var responseToCache = response.clone();
-
-        caches.open(CACHE_NAME).then(function(cache) {
-          cache.put(event.request, responseToCache);
-        });
-
-        return response;
-      });
-    })
-  );
-});
-
-// Update the service worker
+// Roept zelf het event aan om de service worker te activeren
 self.addEventListener("activate", function(event) {
-  var cacheWhitelist = ["pages-cache-v1", "blog-posts-cache-v1"];
+  console.log("Service worker is activated");
 
+  // Verwijder alle caches die je niet nodig hebt
+  // Loop door de caches
   event.waitUntil(
-    caches.keys().then(function(cacheNames) {
+    caches.keys().then(cacheNames => {
       return Promise.all(
-        cacheNames.map(function(cacheName) {
-          if (cacheWhitelist.indexOf(cacheName) === -1) {
-            return caches.delete(cacheName);
-          }
+        cacheNames.filter(function(cache) {
+          console.log("Service Worker cleared old cache");
+          return cache === cacheName;
         })
       );
     })
+  );
+});
+
+// Roept zelf het event aan om te fetchen
+self.addEventListener("fetch", function(event) {
+  console.log("Service Worker is fetching");
+  event.respondWith(
+    fetch(event.request)
+      .then(function(res) {
+        // Maak een copy / clone vn het response op de server
+        const resClone = res.clone();
+        caches.open(cacheName).then(function(cache) {
+          // Voeg de response toe aan de cache
+          cache.put(event.request, resClone);
+        });
+        return res;
+      })
+      .catch(err => caches.match(event.request).then(res => res))
   );
 });

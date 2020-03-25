@@ -1,6 +1,12 @@
 <!-- BRON https://imagekit.io/blog/lazy-loading-images-complete-guide/ -->
 
 <script>
+    const allImages = document.querySelectorAll('img')
+    allImages.forEach(img => {
+        img.setAttribute('data-src', img.src)
+        img.removeAttribute('src')
+    })
+
     document.addEventListener("DOMContentLoaded", function () {
         var lazyloadImages = document.querySelectorAll("img.lazy");
         var lazyloadThrottleTimeout;
