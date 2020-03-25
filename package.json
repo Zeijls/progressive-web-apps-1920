@@ -21,7 +21,6 @@
   "license": "ISC",
   "description": "In this course we convert the client side web application made in the course Web App From Scratch into a server side rendered web application",
   "dependencies": {
-    "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "node-fetch": "^2.6.0"
@@ -29,6 +28,7 @@
   "homepage": "https://github.com/Zeijls/progressive-web-apps-1920/blob/master/README.md",
   "devDependencies": {
     "chokidar-cli": "^2.1.0",
+    "dotenv": "^8.2.0",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-minify-css": "^1.2.4",
