@@ -12,9 +12,13 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 app.use(express.static(path.join(__dirname, "static")));
+
+app.get("/", (req, res) => {
+  res.send("hello world");
+});
 // Routes;
-app.use("/", overviewRouter);
-app.use(detailRouter);
+// app.use("/", overviewRouter);
+// app.use(detailRouter);
 // app.use(offlineRouter);
 
 // app.listen(function(port) {
@@ -23,7 +27,7 @@ app.use(detailRouter);
 // app.listen(port, () => {
 //   console.log(`Example app listening on port ${port}!`);
 // });
-app.listen(port, () => console.log(`BT ${port}!`));
+app.listen(process.env.PORT || 4000, () => console.log(`BT ${port}!`));
 
 // app.get("/", (req, res) => {
 //   paintingData.getPaintings().then(function(paintingData) {
