@@ -24,7 +24,7 @@ body>main>section {
     height: 1500px;
     margin-left: auto;
     margin-right: auto;
-    background-color: brown;
+    background-color: #D55340;
 }
 
 body>main>section>h2 {
@@ -55,7 +55,7 @@ body>main>section.active {
     object-fit: cover;
     width: 100%;
     min-height: 500px;
-    background-color: brown;
+    background-color: #D55340;
 }
 
 section[data-route="painting"] {
@@ -112,7 +112,7 @@ section[data-route="painting"] a {
 /* Lazy loading  */
 
 img.lazy {
-    background-color: brown;
+    background-color: #D55340;
     width: 400px;
     height: 300px;
     display: block;
