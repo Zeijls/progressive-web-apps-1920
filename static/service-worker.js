@@ -1,15 +1,20 @@
 const CORE_CACHE_VERSION = 2,
   CORE_CACHE_NAME = `core-v${CORE_CACHE_VERSION}`,
   HTML_CACHE_NAME = `core-html-v${CORE_CACHE_VERSION}`,
-  CORE_ASSETS = ["/offline", "/main.css"];
+  // CORE_ASSETS = ["/offline", "/main.css"];
+  CORE_ASSETS = ["/offline", "/css/main.css"];
 
 self.addEventListener("install", event => {
   console.log("Installing Service Worker");
   event.waitUntil(
-    Promise.all([
-      caches.open(CORE_CACHE_NAME).then(cache => cache.addAll(CORE_ASSETS)),
-      fetchAndCache("/", HTML_CACHE_NAME)
-    ]).then(() => self.skipWaiting())
+    // Promise.all([
+    //   caches.open(CORE_CACHE_NAME).then(cache => cache.addAll(CORE_ASSETS)),
+    //   fetchAndCache("/", HTML_CACHE_NAME)
+    // ]).then(() => self.skipWaiting())
+    caches.open(CORE_CACHE_NAME).then(function(cache) {
+      console.log("hier doe ik het nog");
+      return cache.addAll(CORE_ASSETS).then(() => self.skipWaiting());
+    })
   );
 });
 
