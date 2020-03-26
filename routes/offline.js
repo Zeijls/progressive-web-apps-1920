@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/offline", function(req, res, next) {
+router.get("/offline", (req, res) => {
   res.render("offline");
 });
 

@@ -1,46 +1,99 @@
-// Bron; https://www.youtube.com/watch?v=ksXwaWHCW6k
+const CORE_CACHE_VERSION = 2,
+  CORE_CACHE_NAME = `core-v${CORE_CACHE_VERSION}`,
+  HTML_CACHE_NAME = `core-html-v${CORE_CACHE_VERSION}`,
+  CORE_ASSETS = ["/offline", "/main.css"];
 
-const cacheName = "version-1";
-
-// Roept zelf het event aan op de service worker te installeren
-self.addEventListener("install", function(event) {
-  console.log("Service worker is installed");
-});
-
-// Roept zelf het event aan om de service worker te activeren
-self.addEventListener("activate", function(event) {
-  console.log("Service worker is activated");
-
-  // Verwijder alle caches die je niet nodig hebt
-  // Loop door de caches
+self.addEventListener("install", event => {
+  console.log("Installing Service Worker");
   event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.filter(function(cache) {
-          console.log("Service Worker cleared old cache");
-          return cache === cacheName;
+    Promise.all([
+      caches.open(CORE_CACHE_NAME).then(cache => cache.addAll(CORE_ASSETS)),
+      fetchAndCache("/", HTML_CACHE_NAME)
+    ]).then(() => self.skipWaiting())
+  );
+});
+
+self.addEventListener("activate", event => {
+  console.log("Activating Service Worker");
+  event.waitUntil(clients.claim());
+});
+
+self.addEventListener("fetch", event => {
+  console.log("Fetch Event: ", event.request.url);
+  if (isCoreGetRequest(event.request)) {
+    console.log("Core Get Request: ", event.request.url);
+    // cache only strategy
+    event.respondWith(
+      caches.open(CORE_CACHE_NAME).then(cache => cache.match(event.request.url))
+    );
+  } else if (isHtmlGetRequest(event.request)) {
+    console.log("HTML Get Request: ", event.request.url);
+    // generic fallback
+    event.respondWith(
+      caches
+        .open(HTML_CACHE_NAME)
+        .then(cache => cache.match(event.request.url))
+        .then(response =>
+          response ? response : fetchAndCache(event.request, HTML_CACHE_NAME)
+        )
+        .catch(err => {
+          return caches
+            .open(CORE_CACHE_NAME)
+            .then(cache => cache.match("/offline"));
         })
-      );
-    })
-  );
+    );
+  }
 });
 
-// Roept zelf het event aan om te fetchen
-self.addEventListener("fetch", function(event) {
-  console.log("Service Worker is fetching");
-  event.respondWith(
-    fetch(event.request)
-      .then(function(res) {
-        // Maak een copy / clone vn het response op de server
-        const resClone = res.clone();
-        caches.open(cacheName).then(function(cache) {
-          // Voeg de response toe aan de cache
+/**
+ * Fetch url and add it to the cache
+ *
+ * @param request
+ * @param cacheName
+ * @returns {Promise<Response | never>}
+ */
+const fetchAndCache = (request, cacheName) => {
+    return fetch(request).then(response => {
+      if (!response.ok) {
+        throw new TypeError("Bad response status");
+      }
 
-          cache.put(event.request, resClone);
-          // .then(cache => cache.match('/offline'))
-        });
-        return res;
-      })
-      .catch(err => caches.match(event.request).then(res => res))
-  );
-});
+      const clone = response.clone();
+      caches.open(cacheName).then(cache => cache.put(request, clone));
+      return response;
+    });
+  },
+  /**
+   * Checks if a request is a GET and HTML request
+   *
+   * @param {Object} request        The request object
+   * @returns {Boolean}            Boolean value indicating whether the request is a GET and HTML request
+   */
+  isHtmlGetRequest = request => {
+    return (
+      request.method === "GET" &&
+      request.headers.get("accept") !== null &&
+      request.headers.get("accept").indexOf("text/html") > -1
+    );
+  },
+  /**
+   * Checks if a request is a core GET request
+   *
+   * @param {Object} request        The request object
+   * @returns {Boolean}            Boolean value indicating whether the request is in the core mapping
+   */
+  isCoreGetRequest = request => {
+    return (
+      request.method === "GET" && CORE_ASSETS.includes(getPathName(request.url))
+    );
+  },
+  /**
+   * Get a pathname from a full URL by stripping off domain
+   *
+   * @param {Object} requestUrl        The request object, e.g. https://www.mydomain.com/index.css
+   * @returns {String}                Relative url to the domain, e.g. index.css
+   */
+  getPathName = requestUrl => {
+    const url = new URL(requestUrl);
+    return url.pathname;
+  };

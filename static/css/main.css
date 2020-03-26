@@ -112,6 +112,8 @@ section[data-route="painting"] a {
 /* Lazy loading  */
 
 img.lazy {
+
+
     background-color: #D55340;
     width: 400px;
     height: 300px;

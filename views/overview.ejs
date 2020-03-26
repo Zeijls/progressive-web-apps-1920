@@ -13,7 +13,7 @@
           <% console.log(item.webImage) %>
           <a href="/paintings/<%= item.objectNumber %>">
             <% console.log(data) %>
-            <img class="lazy" src="<%= item.webImage.url %>" />
+            <img class="lazy" src="<%= item.webImage.url %>" alt="<%=item.title%>" />
           </a>
         </li>
         <% }); %>
