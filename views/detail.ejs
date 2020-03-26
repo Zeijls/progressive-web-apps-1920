@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
 <%- include('partials/head') %>
 
 <body>
@@ -6,7 +6,7 @@
     <% console.log('paintingData') %>
     <main id="content">
         <section data-route="painting" id="painting">
-            <img src="<%= paintingData.webImage.url%>" alt="" />
+            <img src="<%= paintingData.webImage.url%>">
             <div>
                 <section><%=paintingData.title%></section>
                 <section><%=paintingData.productionPlaces%></section>

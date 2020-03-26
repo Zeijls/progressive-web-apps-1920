@@ -106,6 +106,7 @@ section[data-route="painting"] a {
     text-transform: uppercase;
     position: absolute;
     bottom: 100px;
+    color: white;
 }
 
 /* Lazy loading  */

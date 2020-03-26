@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
 <%- include('partials/head') %>
 
 <body>
@@ -11,7 +11,7 @@
         <li>
           <% console.log(item.webImage) %>
           <a href="/paintings/<%= item.objectNumber %>">
-            <% console.log(item.webImage.url) %>
+            <% console.log(data) %>
             <img class="lazy" src="<%= item.webImage.url %>" />
           </a>
         </li>

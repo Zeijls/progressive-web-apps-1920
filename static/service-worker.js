@@ -35,7 +35,9 @@ self.addEventListener("fetch", function(event) {
         const resClone = res.clone();
         caches.open(cacheName).then(function(cache) {
           // Voeg de response toe aan de cache
+
           cache.put(event.request, resClone);
+          // .then(cache => cache.match('/offline'))
         });
         return res;
       })

@@ -7,109 +7,38 @@
 
 ## Inhoudspagina
 
-- [Feedback](#Feedback)
+- [Installatie](#Installatie)
 - [Live Demo](#Live-Demo)
 - [De opdracht](#De-opdracht)
 - [Concept](#Concept)
-- [Installatie](#Installatie)
 - [API](#API)
 - [Artikelen](#Artikelen)
 - [Bronnenlijst](#Bronnenlijst)
 - [Credits](#Credits)
 
-## Feedback
+### Installatie
 
-- Mijn manifest bestand staat nu in de static map, hier wil ik mijn service worker ook aan toevoegen. Is dit een handige plek? Of kan dit ergens anders beter?
-- Zodra de gebruiker offline geeft wil ik hier een melding van geven zoals veel applicaties ook doen (een balkje bovenin) is dit voldoende, of moet dit uitgebreider? <br>
-  ![Voorbeeld Offline](/docs/img/vbOffline.png)
+```bash
+#### Clone repository
+git clone https://github.com/zeijls/progressive-web-apps-1920.git
+
+cd progressive-web-apps-1920
+
+#### Installeer dependencies en start de server
+npm run start
+```
 
 ## Live Demo
 
-[Live Demo](https://zeijls.github.io/performance-matters-1819/.)
-Live demo werkt nog niet, moet dat nog deployen met Heroku.
+[Live Demo](https://pwa-simone.herokuapp.com/)
 
 ## Opdracht
 
-De web aplicatie moet server side worden gerenderd. Zodra de gebruiker offline is, moet de content zichbaar blijven. De concent die de gebruiker al een keer eerder heeft bezocht kan offline beschikbaar zijn doordat het wordt opgeslagen in de cache. Aan het einde van dit project is het de bedoeling dat het concept een progressive web app is.
+De web aplicatie moet server side worden gerenderd. Zodra de gebruiker offline is, moet de content zichtbaar blijven. De content die de gebruiker al een keer eerder heeft bezocht kan offline beschikbaar zijn doordat het wordt opgeslagen in de cache. Aan het einde van dit project is het de bedoeling dat het concept een progressive web app is.
 
 ## Concept
 
 Op de webapplicatie zijn alle schilderijen van Rembrandt van Rijn in het Rijksmuseum weergegeven. Zodra een schilderij wordt geselecteerd worden de details weergegeven. Als het ophalen van de schilderijen lang duurt is er een loadingstate.
-
-## Installatie
-
-### Nodejs
-
-Ik had nodejs al geinstalleerd op mijn computer. Om te controleren of NPM al is geintalleerd kun je het volgende commando toepassen in je terminal;
-
-> node -v
-
-Als je nodejs nog niet hebt kun je dit installeren via de volgende link;
-[Nodejs installeren](https://nodejs.org/en/download/)
-
-### NPM
-
-Om te controleren of je NPM al hebt geinstalleerd kun je het volgende commando uitvoeren in je terminal;
-
-> npm -v
-
-Als je NPM nog moet installeren kun je het volgende commando uitvoeren in je terminal;
-
-> npm install npm@latest -g
-
-### Express
-
-Om express te installeren heb je een aantal verschillende stappen nodig. Hierbij gaan we ervan uit dat je nodejs succesvol hebt geinstalleerd.
-
-> mkdir myapp
-> cd myapp
-
-Gebruik npm init om een bestand package.json file aan te maken voor je applicatie.
-
-> npm init
-
-Om de standaard instellingen te accepteren zoals de versie en de naam van je applicatie kun je op enter klikken. In de entry point vul je de naam van je javascript bestand in.
-
-> entry point: (index.js)
-
-Installeer express in de dependecies list
-
-> npm install express --save
-
-### Nodemon
-
-Nodemon kan de wijzigingen die je toepast in de applicatie meteen doorvoegen naar je localhost. Hierdoor hoef je niet iedere keer NPM af te sluiten en opnieuw op te starten. Nodemon installeer je op de volgende manier in je dependencies;
-
-> npm install --save-dev nodemon
-
-### ejs
-
-Door middel van ejs kun je html renderen in je bestanden. Om ejc te installeren gebruik je het volgende commando;
-
-> npm install ejs
-
-### Gulp
-
-> NPM install --save-dev gulp
-
-Gulp uglify
-
-> NPM install --save-dev gulp-uglify
-
-Gulp concat
-
-> NPM install --save-dev gulp-concat
-
-Gulp CSS
-
-> NPM install --save-dev gulp-css
-
-### Chokidar
-
-> NPM install --save-dev chokidar-cli
-
-> "watch:css": "chokidar './static/css/\*.css' -c 'npm run build:css'"
-> (in package.json)
 
 ## API
 
@@ -123,6 +52,110 @@ Ik heb alleen de schilderijen van Rembrandt van Rijn gebruikt door de volgende e
 
 Er bleven 9 schilderijen over. Vanaf dit punt heb ik deze schilderijen verder uitgezocht door middel van Map, Filter en Reduce.
 
+## Server side renderen
+
+Voor dit project moet ik mijn applicatie server side renderen. Omdat ik nog niet meteen begreep wat het verschil is met client side renderen heb ik hier een artikel over geschreven voor de Weekly Nerd.
+
+<details>
+<summary>
+### Server side vs Client Side renderen </summary>
+
+#### Inleiding
+
+Voor het vak Progressive Web Apps gaan we een applicatie die Client Side was gerenderd ombouwen naar een server side gerenderde pagina. Om goed te kunnen begrijpen wat hier precies gebeurd wil ik weten wat nou precies het verschil is tussen deze twee manieren van renderen.
+
+Sinds het begin van de tijd was de conventionele methode om uw HTML op een scherm te krijgen, het gebruik van server-side rendering. Het was de enige manier. U laadde uw .html-pagina's op uw server, vervolgens ging uw server en veranderde ze in nuttige documenten in de browsers van uw gebruikers. Je zou kunnen stellen dat websites tegenwoordig meer lijken op applicaties die zich voordoen als websites. Het web is gewoon een stuk geavanceerder dan vroeger.
+
+#### Server side renderen
+
+Hoe server-side rendering werkt
+Server-side rendering is de meest gebruikelijke methode om informatie op het scherm weer te geven. Het werkt door HTML-bestanden op de server om te zetten in bruikbare informatie voor de browser.Telkens wanneer u een website bezoekt, doet uw browser een verzoek aan de server die de inhoud van de website bevat. Het verzoek duurt meestal maar een paar milliseconden, maar dat hangt uiteindelijk af van een groot aantal factoren:
+
+- Uw internetsnelheid
+- De locatie van de server
+- Hoeveel gebruikers toegang tot de site proberen te krijgen
+- Hoe geoptimaliseerd de website is
+  (om er maar een paar te noemen)
+
+Zodra het verzoek is verwerkt, krijgt uw browser de volledig gerenderde HTML terug en wordt deze op het scherm weergegeven. Als u vervolgens besluit om een ​​andere pagina op de website te bezoeken, zal uw browser opnieuw een verzoek om de nieuwe informatie indienen. Dit gebeurt elke keer dat u een pagina bezoekt waarvan uw browser geen gecachte versie heeft.
+
+Het maakt niet uit of de nieuwe pagina maar een paar items heeft die anders zijn dan de huidige pagina, de browser zal om de hele nieuwe pagina vragen en alles vanaf de grond opnieuw weergeven.
+
+#### Voordeel server side renderen
+
+Het is super goed voor de SEO doordat de inhoud al aanwezig is voordat je hem hebt ontvangen. Hierdoor kunnen zoekmachines deze indexeren en prima doorzoeken. Dit is niet het geval bij client side renderen. (niet zo eenvoudig in iedergeval)
+
+#### Nadeel server side renderen
+
+Iedere pagina wordt compleet opnieuw geladen, ook al wordt er maar 1 woord aangepast. Hierdoor kan het super lang duren voordat de pagina is geladen. De website kan hier ontzettend sloom van worden.
+
+#### Client Side renderen
+
+Wanneer ontwikkelaars praten over rendering aan de clientzijde, hebben ze het over het renderen van inhoud in de browser met JavaScript. Dus in plaats van alle inhoud uit het HTML-document zelf te halen, krijg je een kaal HTML-document met een JavaScript-bestand dat de rest van de site via de browser zal weergeven.
+
+Dit is een relatief nieuwe benadering voor het renderen van websites en het werd pas echt populair toen JavaScript-bibliotheken het begonnen op te nemen in hun stijl van ontwikkeling. Enkele opvallende voorbeelden zijn Vue.js en React.js.
+
+![VB Client Side Renderen](Sketchnote,Aantekningen/ClientsideVSServerside/clientSideRenderen.png)
+
+Er zijn een aantal grote verschillen in de werking van client side renderen. Om te beginnen, in plaats van de inhoud in het HTML-bestand te hebben, heb je een container-div met een id van root. Je hebt ook twee scriptelementen direct boven de afsluitende body-tag. Een die de Vue.js JavaScript-bibliotheek laadt en een die een bestand met de naam app.js. laadt.
+
+Dit is radicaal anders dan het gebruik van server-side rendering omdat de server nu alleen verantwoordelijk is voor het laden van het kale minpuntje van de website. De belangrijkste boilerplate. Al het andere wordt afgehandeld door een JavaScript-bibliotheek aan de clientside, in dit geval Vue.js en aangepaste JavaScript-code.
+
+Als je alleen met de bovenstaande code een verzoek indient bij de URL, krijgt u een leeg scherm. Er hoeft niets te worden geladen omdat de daadwerkelijke inhoud moet worden weergegeven met JavaScript.
+
+Om dat op te lossen, plaatst u de volgende coderegels in het app.js-bestand.
+
+![VB Client Side Renderen](Sketchnote,Aantekningen/ClientsideVSServerside/VB2Clientside.png)
+
+Als u nu de URL bezoekt, ziet u dezelfde inhoud als in het voorbeeld aan de serverside. Het belangrijkste verschil is dat als je op de link op de pagina klikt om meer inhoud te laden, de browser geen nieuw verzoek aan de server zal doen. Je geeft items weer met de browser, dus deze gebruikt in plaats daarvan JavaScript om de nieuwe inhoud te laden en Vue.js zorgt ervoor dat alleen de nieuwe inhoud wordt weergegeven. Al het andere wordt met rust gelaten.
+
+Dit is veel sneller omdat je slechts een heel klein deel van de pagina laadt om de nieuwe inhoud op te halen, in plaats van de hele pagina te laden.
+
+Er zijn echter enkele compromissen met het gebruik van client-side rendering. Omdat de inhoud niet wordt weergegeven totdat de pagina in de browser is geladen, zal SEO voor de website een hit worden. Er zijn manieren om dit te omzeilen, maar het is niet zo eenvoudig als bij het renderen op de server.
+
+Een ander ding om in gedachten te houden is dat uw website / applicatie niet kan laden totdat ALLE JavaScript naar de browser is gedownload. Logisch, want het bevat alle inhoud die nodig is. Als uw gebruikers een trage internetverbinding gebruiken, kan dit de aanvankelijke laadtijd een beetje lang maken.
+
+#### Voor en nadelen van de verschillende aanpak
+
+Voordelen voor de serverside:
+
+- Zoekmachines kunnen de site crawlen voor betere SEO.
+- De eerste pagina wordt sneller geladen.
+- Geweldig voor statische sites
+
+Nadelen aan serverside:
+
+- Frequente serververzoeken.
+- Een algehele trage paginaweergave.
+- Herladen van volledige pagina.
+- Niet-rijke site-interacties.
+
+Voordelen voor clientside
+
+- Rijke site-interacties
+- Snelle website-rendering na de eerste keer laden.
+- Ideaal voor webapplicaties.
+- Robuuste selectie van JavaScript-bibliotheken.
+
+Nadelen aan clientside:
+
+- Lage SEO indien niet correct geïmplementeerd.
+- De eerste keer laden kan meer tijd vergen.
+- In de meeste gevallen is een externe bibliotheek vereist
+
+Verschillen server en client side
+cookies zijn server side en hebben een maximum opslag van 4kb
+local storage is client side en heeft een maximum opslag van 5mb, daarnaast zal local storage langer online blijven.
+
+Na het lezen van deze artikelen is voor mij helemaal duidelijk wat het precieze verschil is tussen serverside en clientside renderen. Dit zal mij veel helpen bij het vak Progressive Web Apps.
+
+#### Interessante Bronnen
+
+- [FreeCodeCamp](https://www.freecodecamp.org/news/what-exactly-is-client-side-rendering-and-hows-it-different-from-server-side-rendering-bd5c786b340d/)
+- [Developers](https://www.toptal.com/front-end/client-side-vs-server-side-pre-rendering)
+- [Medium](https://medium.com/@benjburkholder/javascript-seo-server-side-rendering-vs-client-side-rendering-bc06b8ca2383)
+  </details>
+
 ## To Do
 
 - [x] Heroku
@@ -130,13 +163,24 @@ Er bleven 9 schilderijen over. Vanaf dit punt heb ik deze schilderijen verder ui
 - [x] Manifest file (installable app)
 - [x] Service worker
 
-  - [ ] Offline versie service worker
+  - [x] Offline versie service worker
+  - [ ] Offline state
 
-- [x] Gulp concat
-- [ ] Minify
-- [ ] Afbeeldingen verkleinen
+- [ ] Optimaliseren
 
-- [ ] Rubric doorlezen
+  - [x] Gulp concat
+  - [ ] Minify
+  - [x] Lazyloading (afbeeldingen)
+
+- [ ] Rubric bijwerken
+  - [ ] Verwijzing weekly nerd artikel, server / client side renderen
+  - [ ] Lazyloading
+  - [ ] Gulp concat
+  - [ ] Service worker
+  - [ ] Optimalisatie inc. mogelijkheden "wishlist"
+  - [ ] Installaties bijwerken
+  - [ ] Credits bijwerken
+  - [ ] Bronnen bijwerken
 
 ## Artikelen
 
