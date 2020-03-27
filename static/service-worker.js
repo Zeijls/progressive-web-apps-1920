@@ -3,7 +3,7 @@ var urlsToCache = ["/", "/css/main.css"];
 
 // Install service worker
 self.addEventListener("install", function(event) {
-  // Perform install steps
+  // Voegt bestanden uit "urlsToCache" toe aan de cache
   event.waitUntil(
     caches.open(CACHE_NAME).then(function(cache) {
       console.log("Opened cache");
@@ -12,27 +12,24 @@ self.addEventListener("install", function(event) {
   );
 });
 
-// check and clone the response, one for the browser and one for the cache
+// Checkt en clonet de response, een voor de browser en een voor de cache
 self.addEventListener("fetch", function(event) {
   event.respondWith(
     caches.match(event.request).then(function(response) {
-      // Cache hit - return response
+      // Als er een response in de cache is, geef deze terug
       if (response) {
         return response;
       }
 
+      // Als de request nog niet in de cache staat
       return fetch(event.request).then(function(response) {
-        // Check if we received a valid response
+        // Controlleer of het een valid response is
         if (!response || response.status !== 200 || response.type !== "basic") {
           return response;
         }
 
-        // IMPORTANT: Clone the response. A response is a stream
-        // and because we want the browser to consume the response
-        // as well as the cache consuming the response, we need
-        // to clone it so we have two streams.
         var responseToCache = response.clone();
-
+        // Voegt nieuwe request toe aan cache
         caches.open(CACHE_NAME).then(function(cache) {
           cache.put(event.request, responseToCache);
         });
