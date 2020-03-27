@@ -141,7 +141,7 @@ self.addEventListener("fetch", function(event) {
 </details>
 
 <details><summary>Audits</summary>
-<img width="985" alt="Screenshot 2020-03-27 at 11 45 16" src="https://user-images.githubusercontent.com/45422060/77748924-72c58380-7021-11ea-840a-10040ea6fa81.png">
+<img width="686" alt="Screenshot 2020-03-27 at 17 00 35" src="https://user-images.githubusercontent.com/45422060/77775260-9e119800-704c-11ea-921f-364f111005cd.png">
 
 </details>
 
@@ -183,7 +183,7 @@ return gulp
 </details>
 
 <details><summary>Audits</summary>
-<img width="985" alt="Screenshot 2020-03-27 at 11 45 16" src="https://user-images.githubusercontent.com/45422060/77748924-72c58380-7021-11ea-840a-10040ea6fa81.png">
+<img width="686" alt="Screenshot 2020-03-27 at 17 00 35" src="https://user-images.githubusercontent.com/45422060/77775260-9e119800-704c-11ea-921f-364f111005cd.png">
 </details>
 
 <details><summary>Netwerk</summary>
@@ -212,7 +212,7 @@ header>ul>li>a{color:#fff;font-size:80px;text-transform:uppercase;text-decoratio
 </details>
 
 <details><summary>Audits</summary>
-<img width="985" alt="Screenshot 2020-03-27 at 11 45 16" src="https://user-images.githubusercontent.com/45422060/77748924-72c58380-7021-11ea-840a-10040ea6fa81.png">
+<img width="686" alt="Screenshot 2020-03-27 at 17 00 35" src="https://user-images.githubusercontent.com/45422060/77775260-9e119800-704c-11ea-921f-364f111005cd.png">
 </details>
 
 <details><summary>Netwerk</summary>
@@ -237,7 +237,7 @@ app.use(compression());
 </details>
 
 <details><summary>Audits</summary>
-<img width="985" alt="Screenshot 2020-03-27 at 11 45 16" src="https://user-images.githubusercontent.com/45422060/77748924-72c58380-7021-11ea-840a-10040ea6fa81.png">
+<img width="686" alt="Screenshot 2020-03-27 at 17 00 35" src="https://user-images.githubusercontent.com/45422060/77775260-9e119800-704c-11ea-921f-364f111005cd.png">
 
 </details>
 
@@ -298,7 +298,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </details>
 
 <details><summary>Audits</summary>
-<img width="985" alt="Screenshot 2020-03-27 at 11 45 16" src="https://user-images.githubusercontent.com/45422060/77748924-72c58380-7021-11ea-840a-10040ea6fa81.png">
+<img width="686" alt="Screenshot 2020-03-27 at 17 00 35" src="https://user-images.githubusercontent.com/45422060/77775260-9e119800-704c-11ea-921f-364f111005cd.png">
 
 </details>
 
@@ -318,24 +318,24 @@ Doordat de applicatie van dit project niet zo groot is, zag ik wel bevorderingen
 ## Audits
 
 <details><summary>Performance</summary>
-<img width="957" alt="Screenshot 2020-03-27 at 12 42 40" src="https://user-images.githubusercontent.com/45422060/77752805-8d4f2b00-7028-11ea-82b5-163646ee3170.png">
+<img width="686" alt="Screenshot 2020-03-27 at 17 00 35" src="https://user-images.githubusercontent.com/45422060/77775260-9e119800-704c-11ea-921f-364f111005cd.png">
 </details>
 
 <details><summary>Accecibility</summary>
-<img width="953" alt="Screenshot 2020-03-27 at 12 42 46" src="https://user-images.githubusercontent.com/45422060/77752817-96d89300-7028-11ea-9878-e5b02c7dea0f.png">
+<img width="688" alt="Screenshot 2020-03-27 at 17 00 41" src="https://user-images.githubusercontent.com/45422060/77775412-cc8f7300-704c-11ea-9966-562d7d494998.png">
 
 </details>
 
 <details><summary>Best Practices</summary>
-<img width="960" alt="Screenshot 2020-03-27 at 12 42 52" src="https://user-images.githubusercontent.com/45422060/77752840-a22bbe80-7028-11ea-9119-583fb15fe502.png">
+<img width="688" alt="Screenshot 2020-03-27 at 17 00 48" src="https://user-images.githubusercontent.com/45422060/77775456-d87b3500-704c-11ea-997e-8c40f42922a9.png">
 </details>
 
 <details><summary>SEO</summary>
-<img width="959" alt="Screenshot 2020-03-27 at 12 42 59" src="https://user-images.githubusercontent.com/45422060/77752866-ab1c9000-7028-11ea-8a14-eee4950f0890.png">
+<img width="687" alt="Screenshot 2020-03-27 at 17 00 52" src="https://user-images.githubusercontent.com/45422060/77775485-e29d3380-704c-11ea-9957-d54822ab7401.png">
 </details>
 
 <details><summary>Progressive Web Apps</summary>
-<img width="957" alt="Screenshot 2020-03-27 at 12 43 13" src="https://user-images.githubusercontent.com/45422060/77752887-b40d6180-7028-11ea-8f82-e8c68cb1a5fb.png">
+<img width="688" alt="Screenshot 2020-03-27 at 17 01 02" src="https://user-images.githubusercontent.com/45422060/77775509-ecbf3200-704c-11ea-89d3-2c17f418f157.png">
 </details>
 
 ## To Do
