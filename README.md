@@ -1,19 +1,30 @@
-# Server Site Rendering
+# Progressive Web App Rembrandt van Rijn
+
+## Server side renderen
 
 ## Progressive Web Apps @cmda-minor-web 1819
 
-<img width="1440" alt="overview" src="https://user-images.githubusercontent.com/45422060/76772179-beb23600-67a0-11ea-82f3-e15202dabe0f.png">)
+<img width="1440" alt="overview" src="https://user-images.githubusercontent.com/45422060/76772179-beb23600-67a0-11ea-82f3-e15202dabe0f.png">
 <img width="1440" alt="detail" src="https://user-images.githubusercontent.com/45422060/76772236-d7bae700-67a0-11ea-9b8c-8f1381bbf08b.png">
 
-## Inhoudspagina
+## Inhoud
 
 - [Installatie](#Installatie)
 - [Prototype](#Prototype)
 - [De opdracht](#De-opdracht)
 - [Concept](#Concept)
 - [API](#API)
+- [Server side renderen](#Server-side-renderen)
+- [Optimalisaties](#Optimalisaties)
+  - [Caching](#Caching)
+  - [Gulp Concat](#Gulp-Concat)
+  - [Minifying](#Minifying)
+  - [Gzipping](#Gzipping)
+  - [Lazy Loading](#Lazy-Loading)
+- [Conclusie](#Conclusie)
+- [To Do](#To-Do)
 - [Artikelen](#Artikelen)
-- [Bronnenlijst](#Bronnenlijst)
+- [Bronnen](#Bronnen)
 - [Credits](#Credits)
 
 ### Installatie
@@ -38,7 +49,7 @@ De web aplicatie moet server side worden gerenderd. Zodra de gebruiker offline i
 
 ## Concept
 
-Op de webapplicatie zijn alle schilderijen van Rembrandt van Rijn in het Rijksmuseum weergegeven. Zodra een schilderij wordt geselecteerd worden de details weergegeven. Als het ophalen van de schilderijen lang duurt is er een loadingstate.
+Op de webapplicatie zijn alle schilderijen van Rembrandt van Rijn in het Rijksmuseum weergegeven. Zodra een schilderij wordt geselecteerd worden de details weergegeven.
 
 ## API
 
@@ -57,6 +68,8 @@ Er bleven 9 schilderijen over. Vanaf dit punt heb ik deze schilderijen verder ui
 Voor dit project moet ik mijn applicatie server side renderen. Omdat ik nog niet meteen begreep wat het verschil is met client side renderen heb ik hier een artikel over geschreven voor de Weekly Nerd.
 
 [Server vs client side renderen](https://github.com/Zeijls/weekly-nerd-1920#Server-side-vs-Client-Side-renderen)
+
+## Optimalisaties
 
 ### Caching
 
