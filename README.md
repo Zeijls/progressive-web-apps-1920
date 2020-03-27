@@ -78,6 +78,24 @@ Ik heb gulp uglify toegepst om de statische css bestanden op te schonen. Alle ov
 
 Screenshot audits
 
+### Gzipping
+
+Ik heb gzipping gebruikt om de bestanden te verkleinen, zodat de bestanden kleiner en zijn en sneller worden gedownload.
+
+<details><summary>Code</summary>
+Install
+> npm install compression
+
+```js
+const express = require("express");
+const compression = require("compression");
+const app = express();
+
+app.use(compression());
+```
+
+</details>
+
 ### Lazy loading
 
 In eerste instantie wilde ik mijn afbeeldingen verkleinen omdat deze enorm groot zijn. Omdat mijn afbeeldingen vanuit een API worden geladen kon ik deze niet makkelijk bewerken. Daarom heb ik lazy loading toegepast. De afbeeldingen die niet in de viewport van de gebruiker staan worden nog niet geladen. Op het moment dat de gebruiker gaat scrollen, of zijn scherm verkleint waardoor het mogelijk is dat de afbeeldingen in beeld komen, worden de afbeeldingen pas geladen. Hier werd de website een heel stuk sneller van.

@@ -1,104 +1,61 @@
-const CORE_CACHE_VERSION = 2,
-  CORE_CACHE_NAME = `core-v${CORE_CACHE_VERSION}`,
-  HTML_CACHE_NAME = `core-html-v${CORE_CACHE_VERSION}`,
-  // CORE_ASSETS = ["/offline", "/main.css"];
-  CORE_ASSETS = ["/offline", "/css/main.css"];
+var CACHE_NAME = "v1";
+var urlsToCache = ["/", "/css/main.css"];
 
-self.addEventListener("install", event => {
-  console.log("Installing Service Worker");
+// Install service worker
+self.addEventListener("install", function(event) {
+  // Perform install steps
   event.waitUntil(
-    // Promise.all([
-    //   caches.open(CORE_CACHE_NAME).then(cache => cache.addAll(CORE_ASSETS)),
-    //   fetchAndCache("/", HTML_CACHE_NAME)
-    // ]).then(() => self.skipWaiting())
-    caches.open(CORE_CACHE_NAME).then(function(cache) {
-      console.log("hier doe ik het nog");
-      return cache.addAll(CORE_ASSETS).then(() => self.skipWaiting());
+    caches.open(CACHE_NAME).then(function(cache) {
+      console.log("Opened cache");
+      return cache.addAll(urlsToCache);
     })
   );
 });
 
-self.addEventListener("activate", event => {
-  console.log("Activating Service Worker");
-  event.waitUntil(clients.claim());
-});
-
-self.addEventListener("fetch", event => {
-  console.log("Fetch Event: ", event.request.url);
-  if (isCoreGetRequest(event.request)) {
-    console.log("Core Get Request: ", event.request.url);
-    // cache only strategy
-    event.respondWith(
-      caches.open(CORE_CACHE_NAME).then(cache => cache.match(event.request.url))
-    );
-  } else if (isHtmlGetRequest(event.request)) {
-    console.log("HTML Get Request: ", event.request.url);
-    // generic fallback
-    event.respondWith(
-      caches
-        .open(HTML_CACHE_NAME)
-        .then(cache => cache.match(event.request.url))
-        .then(response =>
-          response ? response : fetchAndCache(event.request, HTML_CACHE_NAME)
-        )
-        .catch(err => {
-          return caches
-            .open(CORE_CACHE_NAME)
-            .then(cache => cache.match("/offline"));
-        })
-    );
-  }
-});
-
-/**
- * Fetch url and add it to the cache
- *
- * @param request
- * @param cacheName
- * @returns {Promise<Response | never>}
- */
-const fetchAndCache = (request, cacheName) => {
-    return fetch(request).then(response => {
-      if (!response.ok) {
-        throw new TypeError("Bad response status");
+// check and clone the response, one for the browser and one for the cache
+self.addEventListener("fetch", function(event) {
+  event.respondWith(
+    caches.match(event.request).then(function(response) {
+      // Cache hit - return response
+      if (response) {
+        return response;
       }
 
-      const clone = response.clone();
-      caches.open(cacheName).then(cache => cache.put(request, clone));
-      return response;
-    });
-  },
-  /**
-   * Checks if a request is a GET and HTML request
-   *
-   * @param {Object} request        The request object
-   * @returns {Boolean}            Boolean value indicating whether the request is a GET and HTML request
-   */
-  isHtmlGetRequest = request => {
-    return (
-      request.method === "GET" &&
-      request.headers.get("accept") !== null &&
-      request.headers.get("accept").indexOf("text/html") > -1
-    );
-  },
-  /**
-   * Checks if a request is a core GET request
-   *
-   * @param {Object} request        The request object
-   * @returns {Boolean}            Boolean value indicating whether the request is in the core mapping
-   */
-  isCoreGetRequest = request => {
-    return (
-      request.method === "GET" && CORE_ASSETS.includes(getPathName(request.url))
-    );
-  },
-  /**
-   * Get a pathname from a full URL by stripping off domain
-   *
-   * @param {Object} requestUrl        The request object, e.g. https://www.mydomain.com/index.css
-   * @returns {String}                Relative url to the domain, e.g. index.css
-   */
-  getPathName = requestUrl => {
-    const url = new URL(requestUrl);
-    return url.pathname;
-  };
+      return fetch(event.request).then(function(response) {
+        // Check if we received a valid response
+        if (!response || response.status !== 200 || response.type !== "basic") {
+          return response;
+        }
+
+        // IMPORTANT: Clone the response. A response is a stream
+        // and because we want the browser to consume the response
+        // as well as the cache consuming the response, we need
+        // to clone it so we have two streams.
+        var responseToCache = response.clone();
+
+        caches.open(CACHE_NAME).then(function(cache) {
+          cache.put(event.request, responseToCache);
+        });
+
+        return response;
+      });
+    })
+  );
+});
+
+// Update the service worker
+self.addEventListener("activate", function(event) {
+  var cacheWhitelist = ["pages-cache-v1", "blog-posts-cache-v1"];
+
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.map(function(cacheName) {
+          if (cacheWhitelist.indexOf(cacheName) === -1) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
+});
