@@ -307,9 +307,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </details>
 
-### Afbeeldings grote verkleinen
+### Afbeeldings grootte verkleinen
 
-Doordat de afbeeldingen uit een API komen, is het erg lastig om iets met de bestandsgrootte te doen. Zodra ik de afbeeldingen aanroep met item.headerImage.url gaat de laadtijd op slow3G van 11min naar 5s. De afbeeldingen zijn ingezoomed, dit heb ik voor nu zo gelaten door tijdnood. Maar is zeker een punt voor de toekomst om mij verder in te verdiepen.
+Doordat de afbeeldingen uit een API komen, is het erg lastig om iets met de bestandsgrootte te doen. Zodra ik de afbeeldingen aanroep met item.headerImage.url gaat de laadtijd op slow3G van 11min naar 5s. De afbeeldingen zijn ingezoomed, dit heb ik voor nu zo gelaten door tijdnood. Maar is zeker een punt voor de toekomst om verder naar te kijken.
 
 ## Conclusie
 
