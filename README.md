@@ -1,8 +1,6 @@
 # Progressive Web App Rembrandt van Rijn
 
-## Server side renderen
-
-## Progressive Web Apps @cmda-minor-web 1819
+## Server side renderen | Progressive Web Apps @cmda-minor-web 1819
 
 <img width="1440" alt="overview" src="https://user-images.githubusercontent.com/45422060/76772179-beb23600-67a0-11ea-82f3-e15202dabe0f.png">
 <img width="1440" alt="detail" src="https://user-images.githubusercontent.com/45422060/76772236-d7bae700-67a0-11ea-9b8c-8f1381bbf08b.png">
@@ -22,6 +20,7 @@
   - [Gzipping](#Gzipping)
   - [Lazy Loading](#Lazy-Loading)
 - [Conclusie](#Conclusie)
+- [Audits](#Audits)
 - [To Do](#To-Do)
 - [Artikelen](#Artikelen)
 - [Bronnen](#Bronnen)
@@ -311,6 +310,29 @@ document.addEventListener("DOMContentLoaded", function() {
 ## Conclusie
 
 Doordat de applicatie van dit project niet zo groot is, zag ik wel bevorderingen in mijn optimalisaties, maar de verschillen waren niet enorm. De grootste verschillen in tijd kwamen aan bod bij de service worker, en de lazy loading. Vooral op het moment dat een gebruiker een pagina voor de tweede keer bezoekt zat hier een groot verschil in tijd in. Daarnaast is het wel goed om je hier een keer goed in te verdiepen zodat je weet hoe dit in zijn werking gaat voor grotere applicaties.
+
+## Audits
+
+<detail><summary>Performance</summary>
+<img width="957" alt="Screenshot 2020-03-27 at 12 42 40" src="https://user-images.githubusercontent.com/45422060/77752805-8d4f2b00-7028-11ea-82b5-163646ee3170.png">
+</detail>
+
+<detail><summary>Accecibility</summary>
+<img width="953" alt="Screenshot 2020-03-27 at 12 42 46" src="https://user-images.githubusercontent.com/45422060/77752817-96d89300-7028-11ea-9878-e5b02c7dea0f.png">
+
+</detail>
+
+<detail><summary>Best Practices</summary>
+<img width="960" alt="Screenshot 2020-03-27 at 12 42 52" src="https://user-images.githubusercontent.com/45422060/77752840-a22bbe80-7028-11ea-9119-583fb15fe502.png">
+</detail>
+
+<detail><summary>SEO</summary>
+<img width="959" alt="Screenshot 2020-03-27 at 12 42 59" src="https://user-images.githubusercontent.com/45422060/77752866-ab1c9000-7028-11ea-8a14-eee4950f0890.png">
+</detail>
+
+<detail><summary>Progressive Web Apps</summary>
+<img width="957" alt="Screenshot 2020-03-27 at 12 43 13" src="https://user-images.githubusercontent.com/45422060/77752887-b40d6180-7028-11ea-8f82-e8c68cb1a5fb.png">
+</detail>
 
 ## To Do
 
