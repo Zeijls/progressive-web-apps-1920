@@ -311,6 +311,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
 Doordat de afbeeldingen uit een API komen, is het erg lastig om iets met de bestandsgrootte te doen. Zodra ik de afbeeldingen aanroep met item.headerImage.url gaat de laadtijd op slow3G van 11min naar 5,64s. De afbeeldingen zijn ingezoomed, dit heb ik voor nu zo gelaten door tijdnood. Maar is zeker een punt voor de toekomst om verder naar te kijken.
 
+`webImage.url`:
+<img width="1273" alt="Screenshot 2020-03-27 at 17 09 26" src="https://user-images.githubusercontent.com/45422060/77776100-c948b700-704d-11ea-95ff-f5ed118ad7d1.png">
+
+`headerImage.url`:
+<img width="1274" alt="Screenshot 2020-03-27 at 17 09 32" src="https://user-images.githubusercontent.com/45422060/77776154-debde100-704d-11ea-9eb4-504af6278f87.png">
+
 ## Conclusie
 
 Doordat de applicatie van dit project niet zo groot is, zag ik wel bevorderingen in mijn optimalisaties, maar de verschillen waren niet enorm. De grootste verschillen in tijd kwamen aan bod bij de service worker, en de lazy loading. Vooral op het moment dat een gebruiker een pagina voor de tweede keer bezoekt zat hier een groot verschil in tijd in. Daarnaast is het wel goed om je hier een keer goed in te verdiepen zodat je weet hoe dit in zijn werking gaat voor grotere applicaties.
