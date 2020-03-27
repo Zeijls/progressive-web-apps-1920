@@ -313,26 +313,26 @@ Doordat de applicatie van dit project niet zo groot is, zag ik wel bevorderingen
 
 ## Audits
 
-<detail><summary>Performance</summary>
+<details><summary>Performance</summary>
 <img width="957" alt="Screenshot 2020-03-27 at 12 42 40" src="https://user-images.githubusercontent.com/45422060/77752805-8d4f2b00-7028-11ea-82b5-163646ee3170.png">
-</detail>
+</details>
 
-<detail><summary>Accecibility</summary>
+<details><summary>Accecibility</summary>
 <img width="953" alt="Screenshot 2020-03-27 at 12 42 46" src="https://user-images.githubusercontent.com/45422060/77752817-96d89300-7028-11ea-9878-e5b02c7dea0f.png">
 
-</detail>
+</details>
 
-<detail><summary>Best Practices</summary>
+<details><summary>Best Practices</summary>
 <img width="960" alt="Screenshot 2020-03-27 at 12 42 52" src="https://user-images.githubusercontent.com/45422060/77752840-a22bbe80-7028-11ea-9119-583fb15fe502.png">
-</detail>
+</details>
 
-<detail><summary>SEO</summary>
+<details><summary>SEO</summary>
 <img width="959" alt="Screenshot 2020-03-27 at 12 42 59" src="https://user-images.githubusercontent.com/45422060/77752866-ab1c9000-7028-11ea-8a14-eee4950f0890.png">
-</detail>
+</details>
 
-<detail><summary>Progressive Web Apps</summary>
+<details><summary>Progressive Web Apps</summary>
 <img width="957" alt="Screenshot 2020-03-27 at 12 43 13" src="https://user-images.githubusercontent.com/45422060/77752887-b40d6180-7028-11ea-8f82-e8c68cb1a5fb.png">
-</detail>
+</details>
 
 ## To Do
 
