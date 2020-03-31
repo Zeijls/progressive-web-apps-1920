@@ -318,7 +318,7 @@ Doordat de afbeeldingen uit een API komen, is het erg lastig om iets met de best
 `headerImage.url`:
 <img width="1274" alt="Screenshot 2020-03-27 at 17 09 32" src="https://user-images.githubusercontent.com/45422060/77776154-debde100-704d-11ea-9eb4-504af6278f87.png">
 
-## Conclusie
+### Conclusie optimalisaties
 
 Doordat de applicatie van dit project niet zo groot is, zag ik wel bevorderingen in mijn optimalisaties, maar de verschillen waren niet enorm. De grootste verschillen in tijd kwamen aan bod bij de service worker, en de lazy loading. Vooral op het moment dat een gebruiker een pagina voor de tweede keer bezoekt zat hier een groot verschil in tijd in. Daarnaast is het wel goed om je hier een keer goed in te verdiepen zodat je weet hoe dit in zijn werking gaat voor grotere applicaties.
 
