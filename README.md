@@ -2,7 +2,7 @@
 
 ## Server side renderen | Progressive Web Apps @cmda-minor-web 1819
 
-<img width="1440" alt="Screenshot 2020-03-27 at 12 49 25" src="https://user-images.githubusercontent.com/45422060/77753238-69401980-7029-11ea-86ee-c8bfc63f5200.png">
+<img width="1274" alt="Screenshot 2020-03-27 at 17 09 32" src="https://user-images.githubusercontent.com/45422060/77776154-debde100-704d-11ea-9eb4-504af6278f87.png">
 <img width="1440" alt="Screenshot 2020-03-27 at 12 48 57" src="https://user-images.githubusercontent.com/45422060/77753244-6ba27380-7029-11ea-9eb0-52a148ec6c6d.png">
 
 ## Inhoud
