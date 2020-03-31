@@ -21,6 +21,7 @@
   - [Lazy Loading](#Lazy-Loading)
 - [Conclusie](#Conclusie)
 - [Audits](#Audits)
+- [Conclusie](#Conclusie)
 - [To Do](#To-Do)
 - [Artikelen](#Artikelen)
 - [Bronnen](#Bronnen)
@@ -343,6 +344,38 @@ Doordat de applicatie van dit project niet zo groot is, zag ik wel bevorderingen
 <details><summary>Progressive Web Apps</summary>
 <img width="688" alt="Screenshot 2020-03-27 at 17 01 02" src="https://user-images.githubusercontent.com/45422060/77775509-ecbf3200-704c-11ea-89d3-2c17f418f157.png">
 </details>
+
+## Conclusie
+
+### server side vs client side renderen
+
+Ik had 3 weken geleden erg veel moeite met het begrijpen van het verschil tussen server en client side renderen. Ik heb daarom besloten om hier een artikel over te schrijven voor de weekly Nerd. Na het onderzoek wat ik heb gedaan voor dit artikel begrijp ik het verschil veel beter.
+[Server vs client side renderen](https://github.com/Zeijls/weekly-nerd-1920#Server-side-vs-Client-Side-renderen)
+
+### Service worker
+
+Service worker is ontzettend handig. Doormiddel van een service worker kun je pagina's uit de applicatie toevoegen aan de cache. Dit werkt als volgt:
+
+Zodra de gebruiker mijn applicatie bezoekt, worden de overzichts pagina en main css meteen opgeslagen in de cache. Alle pagina's die de gebruiker daarna een keer heeft bezocht (en hier dus een request voor heeft gedaan bij de server) worden ook toegevoegd aan de cache. In mijn geval zijn dit alleen de detailpagina's omdat de applicatie niet zo groot is.
+
+De service worker controlleert of het bestand al in de cache staat en zal hem weergeven, en als dit niet het geval is fetcht hij het bestand en voegt het toe aan de cache. Hierdoor wordt de user experience bevorderd bij zwakke tot geen internetconnecties. Zodra de bestanden in de cache staan zijn ze gedownload (waardoor ze zo snel kunnen worden geladen), en kunnen ze offline worden bekeken.
+
+- [Caching](#Caching)
+
+### Critical Rendering Path
+
+Zodra je het critical rendering path gaat optimaliseren kijk je naar de volgende punten:
+
+- Perceived load speed ~ how quickly a page can load and render all of its visual elements to the screen.
+- Load responsiveness ~ how quickly a page can load and execute any required JavaScript code in order for components to respond quickly to user interaction
+- Runtime responsiveness ~ after page load, how quickly can the page respond to user interaction.
+- Visual stability ~ do elements on the page shift in ways that users don't expect and potentially interfere with their interactions?
+- Smoothness ~ do transitions and animations render at a consistent frame rate and flow fluidly from one state to the next?
+
+Hierdoor zorg je ervoor dat je website zo snel mogelijk zoveel mogelijk elementen van de pagina worden geladen en weergegeven waardoor de gebruiker ziet dat de website bezig is met laden en bijvoorbeeld niet 11s naar een een wit scherm zit te kijken zonder dat hij ergens op kan klikken. Dit is meteen een ander punt van critical rendering path. Hoe snel de gebruiker functies kan gebruiken. Bijvoorbeeld: De gebruiker kan al op buttons klikken terwijl op de achtergrond nog afbeeldingen worden geladen. Het critical rendering path kun je optimaliseren in de audits van de dev tools. Ik heb hier ook onderzoek naar gedaan.
+
+- [Optimalisaties](#Optimalisaties)
+- [Audits](#Audits)
 
 ## To Do
 
